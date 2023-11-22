@@ -1,0 +1,166 @@
+@font-face {
+    font-family: title;
+    src: url(../font/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: para;
+    src: url(../font/Montserrat-Regular.ttf);
+}
+
+
+body {}
+
+.main-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #F8F7FF;
+
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F8F7FF;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    /* min-height: 100vh; */
+
+
+}
+
+.books-main-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.books-div {
+    max-width: 1000px;
+    text-align: start;
+}
+
+.search-input {
+    border-radius: 4px;
+    padding: 0px 10px 0px 10px;
+    height: 40px;
+    background: #F0F0F6;
+    max-width: 1000px;
+}
+
+:where(.css-dev-only-do-not-override-nllxry).ant-input-affix-wrapper>input.ant-input {
+    background: #F0F0F6;
+}
+
+/* .form-field {
+    position: relative;
+    display: inline-block;
+}
+
+.icon {
+    position: absolute;
+    right: 0;
+} */
+
+.fiction-button {
+    text-align: start;
+}
+
+/* .formitem{
+    display: flex;
+} */
+
+.Gutenberg-div {
+    /* max-width: 1000px; */
+    text-align: start;
+}
+
+.button {
+    border-radius: 4px;
+    padding: 0px 10px 0px 10px;
+    height: 50px;
+    box-shadow: 0 2px 5px 0 rgba(211, 209, 238, 0.5);
+}
+
+.image-button {
+    height: 20px;
+    width: 20px;
+}
+
+.span-button {
+    font-family: para;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+
+.title {
+    font-family: title;
+    font-size: 48px;
+    color: #5E56E7;
+}
+
+.para-title {
+    font-family: para;
+    font-size: 16px;
+    color: #333333;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #F8F7FF;
+    justify-content: center;
+}
+
+.cardbook {
+    width: 200px;
+    margin: 16px;
+    cursor: pointer;
+    height: 40%;
+}
+
+.books-div {
+    display: flex;
+    min-height: 200px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.div-button-span {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* gap: 20px; */
+}
+
+/* @media (min-width: 768px) {
+    .cardbook {
+        width: calc(25% - 32px);
+    }
+}
+
+@media (min-width: 992px) {
+    .cardbook{
+        width: calc(20% - 32px);
+    }
+}
+
+@media (min-width: 1200px) {
+    .cardbook{
+        width: calc(16.666% - 32px);
+    }
+} */
