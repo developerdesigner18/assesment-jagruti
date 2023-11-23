@@ -23,7 +23,7 @@ body {}
 
 .card {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     background-color: #F8F7FF;
     justify-content: center;
     flex-direction: row;
@@ -44,7 +44,8 @@ body {}
 }
 
 .books-div {
-    max-width: 1000px;
+    /* max-width: 1000px; */
+
     text-align: start;
 }
 
@@ -108,25 +109,64 @@ body {}
     color: #5E56E7;
 }
 
+.para-title-heading {
+    font-family: para;
+    font-size: 13px;
+    color: #333333;
+    text-align: start;
+}
+
+.author {
+    text-align: start;
+    font-family: para;
+    font-size: 12px;
+    color: #A0A0A0;
+}
+
+
 .para-title {
     font-family: para;
     font-size: 16px;
     color: #333333;
+
 }
+
 
 .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: #F8F7FF;
+
     justify-content: center;
 }
 
+.card-container-card {
+    width: 100%;
+    background-color: #F8F7FF;
+
+
+}
+
+.imagecover {
+    width: 114px;
+    height: 162px;
+    border-radius: 8px;
+
+}
+
+:where(.css-dev-only-do-not-override-nllxry).ant-row {
+    padding: 0px 18% 0px 8%;
+}
+
 .cardbook {
-    width: 200px;
+    width: 114px;
     margin: 16px;
     cursor: pointer;
-    height: 40%;
+    /* height: 40%; */
+    /* width: 200px;
+    margin: 16px;
+    cursor: pointer;
+    height: 300px; */
 }
 
 .books-div {
@@ -141,11 +181,21 @@ body {}
 
 .div-button-span {
     width: 70%;
+    /* width: 100%; */
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
     /* gap: 20px; */
 }
+
+/* :where(.css-dev-only-do-not-override-nllxry).ant-card .ant-card-cover>* {
+    height: 60% !important;
+}
+
+:where(.css-dev-only-do-not-override-nllxry).ant-card .ant-card-body {
+    height: 40%;
+} */
 
 /* @media (min-width: 768px) {
     .cardbook {
