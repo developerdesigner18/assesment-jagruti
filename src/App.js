@@ -1,7 +1,9 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import LandingPage from './component/LandingPage';
-import Books from './categoryBook/Book';
+
+import Books from './page/Book';
+import LandingPage from './page/LandingPage';
+
 const App = () => {
   return (
     <div>
