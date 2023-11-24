@@ -6,6 +6,7 @@ import Back from "../assets/New Assets/Back.svg"
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import search from "../assets/New Assets/Search.svg";
+import InfiniteScroll from 'react-infinite-scroller';
 
 const { Meta } = Card;
 
@@ -21,6 +22,7 @@ const Books = () => {
     const [searchPage, setSearchPage] = useState();
     const [searchValue, setSearchValue] = useState('');
     const [loadingNextPage, setLoadingNextPage] = useState(false);
+
     const Navigate = useNavigate();
     useEffect(() => {
 
@@ -141,6 +143,7 @@ const Books = () => {
 
     }
 
+
     return (
 
         <div className='books-main-div' style={{ textAlign: "center" }}>
@@ -174,36 +177,49 @@ const Books = () => {
                 </div>
                 <div className='card-container-card'>
                     <div className='card-container'>
-                        {
-                            items.length > 0 ? (
-                                <Row className='row-books'>
-                                    {items.map((item, index) => (
-                                        <Col key={index} lg={{
-                                            span: 6,
-                                            offset: 2,
-                                        }} xs={{ span: 12 }} sm={{
-                                            span: 6,
-                                            offset: 2,
-                                        }} md={{
-                                            span: 6,
-                                            offset: 2,
-                                        }} xl={{
-                                            span: 2,
-                                            offset: 2,
-                                        }}>
-                                            <div className='cardbook'
-                                                key={index} ref={index == items.length - 1 ? lastItemRef : null}>
-                                                <img onClick={() => handleCard(item)} className='imagecover' alt={item.title} src={item.formats["image/jpeg"]} />
-                                                <h5 className='para-title-heading'>{item.title.toUpperCase()} </h5>
-                                                <p className='author '>{renderAuthors(item.authors)}</p>
-                                            </div>
-                                        </Col>
-                                    ))}
-                                </Row>
-                            ) : (
-                                "No book found"
-                            )
-                        }
+                        <div >
+                            {/* <div style="height:700px;overflow:auto;"> */}
+                            <InfiniteScroll
+                                pageStart={0}
+                                loadMore={page || searchPage}
+                                // next={fetchMoreData}
+                                hasMore={true || false}
+                                loader={<div className="loader" key={0}>Loading ...</div>}
+                            >
+                                {items.length > 0 ? (
+                                    <Row className='row-books'>
+                                        {items.map((item, index) => (
+                                            <Col key={index} lg={{
+                                                span: 6,
+                                                offset: 2,
+                                            }} xs={{ span: 12 }} sm={{
+                                                span: 6,
+                                                offset: 2,
+                                            }} md={{
+                                                span: 6,
+                                                offset: 2,
+                                            }} xl={{
+                                                span: 2,
+                                                offset: 2,
+                                            }}>
+                                                <div className='cardbook'
+                                                    key={index} ref={index == items.length - 1 ? lastItemRef : null}>
+                                                    <img onClick={() => handleCard(item)} className='imagecover' alt={item.title} src={item.formats["image/jpeg"]} />
+                                                    <h5 className='para-title-heading'>{item.title.toUpperCase()} </h5>
+                                                    <p className='author '>{renderAuthors(item.authors)}</p>
+                                                </div>
+                                            </Col>
+                                        ))}
+                                    </Row>
+                                ) : (
+                                    null
+                                )}
+
+                            </InfiniteScroll>
+                        </div>
+                        {/* {
+
+                        } */}
                     </div>
                 </div>
 
