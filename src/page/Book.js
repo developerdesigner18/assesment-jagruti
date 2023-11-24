@@ -176,7 +176,7 @@ const Books = () => {
                     <div className='card-container'>
                         {
                             items.length > 0 ? (
-                                <Row >
+                                <Row className='row-books'>
                                     {items.map((item, index) => (
                                         <Col key={index} lg={{
                                             span: 6,

@@ -154,7 +154,7 @@ body {}
 
 }
 
-:where(.css-dev-only-do-not-override-nllxry).ant-row {
+.row-books {
     padding: 0px 18% 0px 8%;
 }
 

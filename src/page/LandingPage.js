@@ -51,30 +51,37 @@ const LandingPage = () => {
                 <h6 className='para-title'>A social cataloging website that allows you to
                     freely search its database of books,
                     annotations, and reviews.</h6>
-                {arr.map((data) => {
-                    console.log(data, "data_mappp")
-                    return <Form.Item className='formitem' >
-                        <Flex vertical gap="small">
-                            <Button className='button' onClick={() => handleClick(data.title)}>
-                                <Flex gap="small" align="center" justify='space-between'>
-                                    <Flex gap="small" align="center" justify='space-between'> <img className='image-button' src={data.img} alt="Left Image" />
-                                        <span className='span-button' style={{ border: "none", cursor: "pointer" }}>
-                                            {data.title}
-                                        </span></Flex>
-                                    <div >
-                                        <img className='image-button' src={Next} />
-                                        {/* <ArrowRightOutlined /> */}
-                                    </div>
+                <div>
+                    <Row gutter={[16, 16]} justify="center">
+
+                        {arr.map((data) => {
+                            console.log(data, "data_mappp")
+                            return <Col xs={24} lg={{ span: 12 }}> <Form.Item className='formitem' >
+                                <Flex className='flex' vertical gap="small">
+                                    <Button className='button' onClick={() => handleClick(data.title)}>
+                                        <Flex gap="small" align="center" justify='space-between'>
+                                            <Flex gap="small" align="center" justify='space-between'> <img className='image-button' src={data.img} alt="Left Image" />
+                                                <span className='span-button' style={{ border: "none", cursor: "pointer" }}>
+                                                    {data.title}
+                                                </span></Flex>
+                                            <div >
+                                                <img className='image-button' src={Next} />
+                                                {/* <ArrowRightOutlined /> */}
+                                            </div>
+
+                                        </Flex>
+                                    </Button>
+                                    {/*  */}
 
                                 </Flex>
-                            </Button>
-                            {/*  */}
+                            </Form.Item>
+                            </Col>
 
-                        </Flex>
-                    </Form.Item>
+                        })}
 
-                })}
+                    </Row>
 
+                </div>
 
             </div>
 
